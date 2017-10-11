@@ -185,11 +185,6 @@ vendor/lib/libchromatix_s5k3m2xx_snapshot.so
 vendor/lib/libchromatix_s5k3m2xx_video_4k.so
 
 # Camera firmware
-etc/firmware/cpp_firmware_v1_1_1.fw
-etc/firmware/cpp_firmware_v1_1_6.fw
-etc/firmware/cpp_firmware_v1_2_0.fw
-etc/firmware/cpp_firmware_v1_4_0.fw
-etc/firmware/cpp_firmware_v1_6_0.fw
 etc/firmware/cpp_firmware_v1_8_0.fw
 
 # Camera module
@@ -680,7 +675,8 @@ vendor/lib/libconnctrl.so
 vendor/lib64/libconnctrl.so
 
 # NFC
-lib64/hw/libpn547_fw.so
+lib64/hw/libpn547_fw.so:vendor/firmware/libpn547_fw.so
+#path is changed due hardcoded in external/libnfc-nci/halimpl/pn54x/dnld/phDnldNfc.c
 
 # Perf
 bin/msm_irqbalance
@@ -875,6 +871,13 @@ etc/firmware/touch_module_id_0x7a.img
 etc/firmware/touch_module_id_0x7b.img
 etc/touch_fw_update.sh
 
+# Widevine
+lib/drm/libdrmwvmplugin.so
+vendor/lib/libwvdrm_L1.so
+vendor/lib/libwvm.so
+vendor/lib/libWVStreamControlAPI_L1.so
+vendor/lib/mediadrm/libwvdrmengine.so
+
 # Wifi
 etc/firmware/wlan/bcmdhd/fw_bcmdhd.bin
 etc/firmware/wlan/bcmdhd/fw_bcmdhd_apsta.bin
@@ -882,15 +885,15 @@ etc/firmware/wlan/bcmdhd/fw_bcmdhd_apsta.bin
 # Secd
 bin/secd
 bin/iddd
+bin/idd-logreader
 lib/lib_asb_tee.so
 lib/libcredential-manager-service.so
 lib/libdevice_security.so
 lib/libplstorage.so
 lib/libsuntory.so
 lib/libsuntory_utils.so
-lib64/lib-preload64.so
 lib64/lib_asb_tee.so
-lib64/lib_get_secure_mode.so
+#lib64/lib_get_secure_mode.so
 lib64/libcredential-manager-service.so
 lib64/libdevice_security.so
 lib64/libplstorage.so
@@ -899,11 +902,6 @@ lib64/libsuntory_utils.so
 lib64/libtee.so
 
 # Fingerprint
-#etc/firmware/tzfingerprint.mdt
-#etc/firmware/tzfingerprint.b00
-#etc/firmware/tzfingerprint.b01
-#etc/firmware/tzfingerprint.b02
-#etc/firmware/tzfingerprint.b03
 vendor/firmware/tzfingerprint.mdt
 vendor/firmware/tzfingerprint.b00
 vendor/firmware/tzfingerprint.b01
@@ -913,3 +911,7 @@ lib/lib_fpc_tac_shared.so
 lib64/lib_fpc_tac_shared.so
 lib/hw/fingerprint.msm8994.so
 lib64/hw/fingerprint.msm8994.so
+
+# Preload
+lib/lib-preload.so
+lib64/lib-preload.so

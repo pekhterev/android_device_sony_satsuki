@@ -27,7 +27,7 @@ camera.disable_zsl_mode=1
 
 # Bluetooth
 bluetooth.enable_timeout_ms=12000
-ro.bluetooth.hfp.ver=1.6
+ro.bluetooth.hfp.ver=1.7
 ro.bt.bdaddr_path=/data/etc/bluetooth_bdaddr
 
 # Display
@@ -98,7 +98,9 @@ ro.telephony.call_ring.multiple=false
 ro.use_data_netmgrd=true
 ro.data.large_tcp_window_size=true
 ro.ril.telephony.mqanelements=5
-ro.telephony.default_network=9
+persist.telephony.oosisdc=false
+telephony.lteOnCdmaDevice=0
+telephony.lteOnGsmDevice=1
 DEVICE_PROVISIONED=1
 
 # Sensors
@@ -121,12 +123,3 @@ ro.qc.sdk.sensors.gestures=true
 
 # Wifi
 wifi.interface=wlan0
-
-# Semc props
-ro.semc.content.number=PA27
-ro.semc.ms_type_id=PM-0911-BV
-ro.semc.product.device=E68
-ro.semc.product.model=E6853
-ro.semc.product.name=Xperia Z5 Premium
-ro.semc.version.fs=GENERIC
-ro.semc.version.fs_revision=32.3.A.0.376

@@ -89,6 +89,7 @@ on fs
     symlink /rca /mnt/rca
 
 on boot
+
     # execute script to set initial CPU settings
     # don't run as a service to avoid race conditions
     exec - root system -- /system/bin/init.qcom.power.sh
@@ -541,7 +542,7 @@ service fingerprintd /system/bin/fingerprintd
     user system
     group input
     writepid /dev/cpuset/system-background/tasks
-#group drmrpc input system
+group drmrpc input system
 
 service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
     socket msm_irqbalance seqpacket 660 root system
@@ -695,7 +696,7 @@ on property:init.svc.fuse_sdcard1=running
     write /sys/class/block/mmcblk1/bdi/max_ratio 1
 
 service secd /system/bin/secd
-    setenv LD_PRELOAD /system/lib64/lib-preload64.so
+    setenv LD_PRELOAD /system/lib64/lib-preload.so
     class main
     user system
     group system

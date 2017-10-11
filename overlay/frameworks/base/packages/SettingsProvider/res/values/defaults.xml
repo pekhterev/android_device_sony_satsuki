@@ -19,5 +19,5 @@
     <bool name="def_screen_brightness_automatic_mode">true</bool>
 
     <!-- Default screen brightness, from 0 to 255. 133 is 52%. -->
-    <integer name="def_screen_brightness">133</integer>
+    <integer name="def_screen_brightness">102</integer>
 </resources>
